@@ -1,5 +1,7 @@
 import { defineComponent, onMounted, ref } from "vue";
 import "./index.less";
+import { ZHeader } from "../../layout/header";
+import { ZContent } from "../../layout/content";
 
 export const MainPage = defineComponent({
   setup() {
@@ -8,6 +10,11 @@ export const MainPage = defineComponent({
       count.value = 1;
       console.log(count.value);
     });
-    return () => <div class="text">123456</div>;
+    return () => (
+      <div class={"main-page"}>
+        <ZHeader></ZHeader>
+        <ZContent></ZContent>
+      </div>
+    );
   },
 });
